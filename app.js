@@ -6,6 +6,7 @@ const tasks = require('./routes/tasks');
 require('dotenv').config();
 
 //middleware
+app.use(express.static('./public'));
 app.use(express.json());
 
 app.get('/hello', (req, res) => {
