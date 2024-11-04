@@ -4,6 +4,7 @@ const app = express();
 const port = 3000;
 const tasks = require('./routes/tasks');
 require('dotenv').config();
+const notFound = require('./middleware/not-found');
 
 //middleware
 app.use(express.static('./public'));
@@ -14,6 +15,7 @@ app.get('/hello', (req, res) => {
 });
 
 app.use('/api/v1/tasks', tasks);
+app.use(notFound);
 
 const start = async () => {
   try {
