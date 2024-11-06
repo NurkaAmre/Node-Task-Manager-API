@@ -45,12 +45,5 @@ const deleteTask = asyncWrapper(async (req, res) => {
   res.status(200).json({ task: null, status: 'success' });
 });
 
-// const updateTask = async (req, res) => { 
-//   try { 
-//     const { id: taskID } = req.params; 
-//     res.status(200).json({ id: taskID, data: req.body });
-//    }
-//   catch (error) { }
-// }
 
 module.exports = { getAllTasks, createTask, getTask, updateTask, deleteTask };
